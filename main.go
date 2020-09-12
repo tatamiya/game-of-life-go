@@ -97,7 +97,7 @@ func (g *Grid) simulate() (nextGrid *Grid) {
 	nextGrid.New(g.height, g.width)
 	for y := 0; y < g.height; y++ {
 		for x := 0; x < g.width; x++ {
-			stepCell(y, x, g, nextGrid)
+			go stepCell(y, x, g, nextGrid)
 		}
 	}
 	return nextGrid
